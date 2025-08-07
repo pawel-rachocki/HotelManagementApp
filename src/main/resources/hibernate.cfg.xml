@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+        <property name="hibernate.connection.url">jdbc:sqlite:hoteldb.db</property>
+        <property name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
+
+        <!-- SQL settings -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Schema generation -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Connection pool settings -->
+        <property name="hibernate.connection.pool_size">1</property>
+
+        <!-- Current session context -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Disable second-level cache -->
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        <property name="hibernate.cache.use_query_cache">false</property>
+
+        <!-- Encje -->
+        <mapping class="org.example.models.Hotel"/>
+        <mapping class="org.example.models.Pokoj"/>
+        <mapping class="org.example.models.Gosc"/>
+        <mapping class="org.example.models.Rezerwacja"/>
+        <mapping class="org.example.models.Pracownik"/>
+        <mapping class="org.example.models.Recepcjonista"/>
+        <mapping class="org.example.models.Kierownik"/>
+        <mapping class="org.example.models.PersonelSprzatajacy"/>
+        <mapping class="org.example.models.UslugaDodatkowa"/>
+        <mapping class="org.example.models.ZamowienieUslugi"/>
+        <mapping class="org.example.models.Platnosc"/>
+        <mapping class="org.example.models.Rachunek"/>
+
+
+
+    </session-factory>
+</hibernate-configuration>
